@@ -1,7 +1,14 @@
+import path from "path";
+import { fileURLToPath } from "url";
+
 import app from "./app.js";
 import connectDB from "./config/db.js";
 import { Server } from "socket.io";
 import http from "http";
+
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const PORT = process.env.PORT || 3000;
 export const secretKey = process.env.JWT_SECRET || "";
@@ -59,6 +66,15 @@ io.on("connection", (socket) => {
 
 export { io, onlineUsers };
 
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "../frontend/dist")));
+
+  // catch-all route for SPA
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "../frontend", "dist", "index.html"));
+  });
+}
 
 connectDB()
   .then(() => {

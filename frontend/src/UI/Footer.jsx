@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="w-full   dark:bg-zinc-900  bg-black/30 backdrop-blur-xl py-4 text-sm text-zinc-600 dark:text-zinc-400">
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-2">
         {/* Left - App Name or Brand */}
-        <div className="font-semibold text-gray-400">© 2025 Golpo Gujob</div>
+        <div className="font-semibold text-gray-400">© Copyright 2025 Golpo Gujob - All Rights Reserved.</div>
 
         {/* Right - Links */}
         <div className="flex gap-4">

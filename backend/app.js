@@ -24,6 +24,8 @@ app.use("/api/v1/user",userRoute);
 app.use("/api/v1/message",messageRoute);
 
 
+
+
 //error handler
 app.use(notFound);  //handles undefined routes
 app.use(errorHandler);  // handles global error
