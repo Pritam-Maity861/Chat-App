@@ -20,6 +20,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // root routes
+app.get("/",(req,res) => {
+  res.json("app deployed.")
+}
+)
 app.use("/api/v1/user",userRoute);
 app.use("/api/v1/message",messageRoute);
 
