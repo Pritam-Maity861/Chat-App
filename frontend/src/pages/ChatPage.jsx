@@ -16,7 +16,7 @@ import { Menu } from "lucide-react";
 import { MdSend } from "react-icons/md";
 import { Dialog, DialogTrigger, DialogContent } from "@/components/ui/dialog";
 
-const socket = io("http://localhost:8000", { withCredentials: true });
+const socket = io("https://chat-app-1-f0kp.onrender.com", { withCredentials: true });
 
 const ChatPage = () => {
   const { user } = useAuthStore();
