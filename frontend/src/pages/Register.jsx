@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
-import axios from "axios"
 import {
   Card,
   CardContent,
@@ -15,6 +14,7 @@ import Navbar from "../UI/Navbar";
 import Footer from "../UI/Footer";
 import { toast } from "react-toastify";
 import { useNavigate } from 'react-router-dom'
+import axiosInstance from "../utils/axiosInstance";
 
 const Register = () => {
   const nevigate=useNavigate();
@@ -35,8 +35,8 @@ const Register = () => {
     e.preventDefault();
     console.log("Form Data Submitted:", formData);
     try {
-      const response = await axios.post(
-        "http://localhost:8000/api/v1/user/register",
+      const response = await axiosInstance.post(
+        "/user/register",
         formData
       );
       toast.success(response?.data?.message|| "user registered successfully. please login.");
