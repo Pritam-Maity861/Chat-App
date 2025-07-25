@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect} from "react";
 import { Route, Routes } from "react-router-dom";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
@@ -10,12 +10,11 @@ import ProtectedRoutes from "./localComponents/ProtectedRoutes";
 import useAuthStore from "../store/useAuthStore";
 import axiosInstance from "./utils/axiosInstance";
 import UpdateProfile from "./pages/UpdateProfile";
-
 const App = () => {
   const { logout, isLoggedIn } = useAuthStore();
+ 
 
   useEffect(() => {
-    // Only check if we *think* we're logged in
     if (isLoggedIn) {
       const checkAuth = async () => {
         try {

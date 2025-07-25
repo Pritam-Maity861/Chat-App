@@ -1,12 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../UI/Navbar";
 import { Button } from '@/components/ui/button'
 import Footer from "../UI/Footer";
 import { Link } from "react-router-dom";
 import useAuthStore from "../../store/useAuthStore";
+import Loading from "../UI/Loading";
 
 const LandingPage = () => {
+  const [loading, setLoading] = useState(true);
   const {isLoggedIn}=useAuthStore();
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) return <Loading />;
+ 
   return (
     <div className="text-gray-200 text-3xl h-screen flex flex-col text-center ">
       <Navbar />

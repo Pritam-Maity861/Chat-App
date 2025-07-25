@@ -15,10 +15,12 @@ import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
 import { MdSend } from "react-icons/md";
 import { Dialog, DialogTrigger, DialogContent } from "@/components/ui/dialog";
+import Loading from "../UI/Loading";
 
 const socket = io("https://chat-app-1-f0kp.onrender.com", { withCredentials: true });
 
 const ChatPage = () => {
+
   const { user } = useAuthStore();
   const [otherUser, setOtherUser] = useState([]);
   const [selectedUser, setSelectedUser] = useState(null);
@@ -29,6 +31,8 @@ const ChatPage = () => {
 
   const [onlineUserIds, setOnlineUserIds] = useState([]);
 
+  
+
   useEffect(() => {
     socket.on("onlineUsers", (userIds) => {
       setOnlineUserIds(userIds);
@@ -38,6 +42,7 @@ const ChatPage = () => {
       socket.off("onlineUsers");
     };
   }, []);
+  
 
   //function for search filter....
   const filteredUsers = otherUser.filter((u) =>
@@ -112,6 +117,17 @@ const ChatPage = () => {
     }
   };
 
+  const [loading, setLoading] = useState(true);
+  
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) return <Loading />;
   //sidebar ..
   const SidebarContent = (
     <div className="flex flex-col h-full">
