@@ -115,5 +115,5 @@ export const LogOutUser = asyncHandler(async (req, res) => {
 
 //verification route controller..
 export const getme=asyncHandler((req,res) => {
-  res.status(200).json(new ApiResponse(201,{data:req.user},"user data fetched"))
+  res.status(200).json(new ApiResponse(201,{data:req.userId},"user data fetched"))
 })
