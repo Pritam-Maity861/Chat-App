@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: "http://localhost:8000/api/v1",
+  baseURL: "https://chat-app-1-f0kp.onrender.com/api/v1",
   withCredentials: true,
 });
 
