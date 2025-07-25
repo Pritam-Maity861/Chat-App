@@ -5,6 +5,13 @@ It supports **instant messaging**, **live online status**, **profile management 
 
 ---
 
+## 🚀 Live Demo
+
+👉 **[Live App](https://golpogujob.netlify.app/)**  
+*(Click the link above to try the application live!)*
+
+---
+
 ## ✨ Features
 
 ✅ **Real‑time messaging** with Socket.io  
@@ -13,7 +20,7 @@ It supports **instant messaging**, **live online status**, **profile management 
 ✅ **Profile update** (username, email, bio, avatar) with Cloudinary integration  
 ✅ **Zustand global store** for auth state management  
 ✅ **Responsive UI** with shadcn/ui components  
-✅ **Search/filter users** in chat sidebar   
+✅ **Search/filter users** in chat sidebar  
 ✅ **Image avatar preview in popup dialogs**  
 ✅ Built with **React + Vite** on the frontend  
 ✅ Built with **Express + MongoDB** on the backend
@@ -35,7 +42,3 @@ It supports **instant messaging**, **live online status**, **profile management 
 - 🔐 JWT / Session Auth
 - ☁️ Cloudinary for avatar uploads
 - 🔌 Socket.io for real‑time communication
-
----
-
-
