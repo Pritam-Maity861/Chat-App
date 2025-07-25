@@ -16,7 +16,6 @@ const ProtectedRoutes = ({ children }) => {
         return;
       }
       try {
-        // 👇 Call backend to verify JWT cookie
         await axiosInstance.get("/user/getme"); 
         setIsValid(true);
       } catch (error) {
